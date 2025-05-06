@@ -343,7 +343,7 @@ const btns = [
     nome: "Ex. 34 - Soma até negativo",
     func: () => {
       let soma = 0;
-      let n = Number(prompt("DiDigite um número (negativo para parar):"));
+      let n = Number(prompt("Digite um número (negativo para parar):"));
       while (n >= 0) {
         n = Number(prompt("Digite um número (negativo para parar):"));
         if (n > 0) soma += n;
@@ -371,10 +371,11 @@ const btns = [
   {
     nome: "Ex. 37 - Multiplicação acumulada",
     func: () => {
-      let total = 0;
+      let total = 1;
+      let n = Number("1° Número")
       for (let i = 0; i < 5; i++) {
-        total *= i
-        total = Number(prompt(`Número ${i + 1}:`));
+        n = Number(prompt(`${i + 1}° Número:`));
+        total *= n
       }
       alert(`Multiplicação total: ${total}`);
     },
@@ -383,25 +384,25 @@ const btns = [
     nome: "Ex. 38 - Par ou ímpar",
     func: () => {
       const n = Number(prompt("Digite um número:"));
-      alert(n % 3 === 0 ? "Par" : "Ímpar");
+      alert(n % 2 === 0 ? "Par" : "Ímpar");
     },
   },
   {
     nome: "Ex. 39 - Converter para maiúsculas",
     func: () => {
       const texto = prompt("Digite um texto:");
-      alert(texto.toLowerCase());
+      alert(texto.toUpperCase());
     },
   },
   {
     nome: "Ex. 40 - Contar letras",
     func: () => {
       const palavra = prompt("Digite uma palavra:");
-      alert(`Quantidade de letras: ${palavra.trim().split(" ").length}`);
+      alert(`Quantidade de letras: ${palavra.replace(/\s+/g, '').length}`);
     },
   },
   {
-    nome: "Ex. 41 - Tabuada",
+    nome: "Ex. 41 - Tabuada", //parou aqui
     func: () => {
       const n = prompt("Digite um número para ver sua tabuada:");
       let resultado = "";
@@ -433,10 +434,10 @@ const btns = [
   {
     nome: "Ex. 44 - Média até 0",
     func: () => {
-      let soma = 0,
-        count = 0;
-      while (true) {
-        const n = prompt("Digite um número (0 para parar):");
+      let soma = 0, count = 0;
+      const n = prompt("Digite um número (0 para parar):");
+      while (n !== 0) {
+        n = prompt("Digite um número (0 para parar):");
         if (n === 0) break;
         soma += n;
         count++;
